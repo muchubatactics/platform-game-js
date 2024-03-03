@@ -81,7 +81,7 @@ class Player {
   }
 
   static create(pos) {
-    return new Player(pos.plus(new Vec(0, 0.5)), new Vec(0, 0))
+    return new Player(pos.plus(new Vec(0, -0.5)), new Vec(0, 0))
   }
 }
 
@@ -147,7 +147,7 @@ function elt(name, attrs, ...children) {
 
 class DomDisplay {
   constructor(parent, level) {
-    this.dom = elt(div, {class: "game"}, drawGrid(level));
+    this.dom = elt("div", {class: "game"}, drawGrid(level));
     this.actorLayer = null;
     parent.appendChild(this.dom);
   }
