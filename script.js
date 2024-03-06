@@ -348,7 +348,7 @@ function runAnimation(frameFunc) {
 }
 
 function runLevel(level, Display) {
-  let display = new Display(document.body, level);
+  let display = new Display(document.getElementById("game"), level);
   let state = State.start(level);
   let ending = 1;
 
@@ -370,10 +370,23 @@ function runLevel(level, Display) {
   });
 }
 
+let lives = 3;
+const livesDiv = document.querySelector(".life-div .lives");
+livesDiv.textContent = String(lives);
+
 async function runGame(plans, Display) {
   for (let level = 0; level < plans.length;) {
     let status = await runLevel(new Level(plans[level]), Display);
     if (status == "won") level++;
+    else {
+      lives--;
+      livesDiv.textContent = String(lives);
+      if (lives == 0) {
+        console.log("you lose");
+        break;
+      }
+    }
+    document.querySelector(".level-div .level").textContent = String(level + 1)
   }
   console.log("you've won");
 }

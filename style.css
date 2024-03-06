@@ -41,3 +41,50 @@
   max-height: 450px;
   position: relative;
 }
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+footer {
+  text-align: center;
+  margin-top: auto;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: rgb(52, 166, 251);
+}
+
+.container {
+  max-width: 1000px;
+  display: flex;
+}
+
+.life-div, .level-div {
+  margin: 50px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.level, .lives {
+  background-color: rgb(52, 166, 251);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  margin-top: 10px;
+}
